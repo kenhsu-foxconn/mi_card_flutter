@@ -9,20 +9,47 @@ class HotReloadApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.tealAccent,
+        backgroundColor: Colors.teal,
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: Center(child: Text('Hot here'),),
+          title: Center(
+            child: Text('Hot here'),
+          ),
         ),
         body: SafeArea(
-            child: Container(
-              height: 300.0,
-              width: 300.0,
-              margin: EdgeInsets.all(50.0),
-              color: Colors.white70,
-              child: Center(child: Text('Safe here')),
-            )
-        ),
+            child: Row(
+//          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Container(
+              width: 100,
+              color: Colors.red,
+              child: Center(child: Text('Container 1')),
+            ),
+            Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.green,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              width: 100,
+              color: Colors.blue,
+              child: Center(child: Text('Container 3')),
+            ),
+          ],
+        )),
       ),
     );
   }
